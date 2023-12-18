@@ -1,17 +1,20 @@
 .container{
-    margin: 5px;
+    margin: auto;
     height: 100%;
-    padding-left: 150px;
+    width: 800px;
+    padding: 10px;
 }
 
 #CV{
     border-radius: 10px;
-    box-shadow: 0 0 3px; 
+    box-shadow: 20px 20px 50px 15px #36404111; 
     margin: auto !important;
+    background: white !important;
+    z-index: 50;
 }
 
 #leftCV{
-    background: #2b3438;
+    background: #2b3438 !important;
     border-radius: 10px 0 0 10px;
     color: white;
 }
@@ -33,6 +36,7 @@ ul>li{
 ul>h1{
     text-transform: uppercase;
     font-style: italic;
+    font-size: 30px;
 }
 
 .rightCV_header>h2{
@@ -40,7 +44,7 @@ ul>h1{
     text-transform: uppercase;
     text-decoration: solid;
     font-style: italic;
-    font-size: 80px;
+    font-size: 60px;
     margin-top: 30px;
 }
 
