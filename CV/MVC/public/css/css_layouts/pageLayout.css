@@ -1,3 +1,11 @@
+html{
+    background: #f8f6fa;
+}
+
+body{
+    background: #f8f6fa;
+}
+
 #right_space{
     margin-left: 250px;
     height: 100%;
@@ -8,3 +16,5 @@
         margin-left: 0px;
     }
 }
+
+
