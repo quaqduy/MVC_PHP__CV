@@ -9,7 +9,7 @@
                 <tr>
                     <td style='width: 30px;'><i class="fa-solid fa-house"></i></td>
                     <td>
-                        <a href="/mvcphp/CV/home">DashBoard</a>
+                        <a href="/MVC/CV/Home">DashBoard</a>
                     </td>
                 </tr>
             </table>
@@ -19,7 +19,7 @@
                 <tr>
                     <td style='width: 30px;'><i class="fa-solid fa-file"></i></td>
                     <td>
-                        <a href="/mvcphp/CV/project">Projects</a>
+                        <a href="/MVC/CV/Project">Projects</a>
                     </td>
                 </tr>
             </table>
