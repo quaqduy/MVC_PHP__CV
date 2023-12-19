@@ -7,6 +7,7 @@
 
         function model($model){
             require_once("./MVC/models/".$model.".php");
+            return new $model();
         }
     }
 
