@@ -5,7 +5,7 @@
         protected $servername = "localhost";
         protected $username = "root";
         protected $password = "";
-        protected $dbname = "";
+        protected $dbname = "CV";
 
         function __construct() {
             // Create connection

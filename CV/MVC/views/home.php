@@ -137,6 +137,16 @@
                     </div>
                     <div class="modal-body">
                         <input class="form-control" type="password" name="password" value="" placeholder="Password here">
+                        <?php 
+                            if(isset($data["errorContent"]) && $data["errorContent"] !== ''){
+                                ?>
+                                    <div class='text-danger fw-medium'><?= $data["errorContent"] ?></div>
+                                    <script>
+                                        document.querySelector('#passWordModelBtn').click();
+                                    </script>
+                                <?php 
+                            } 
+                        ?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
