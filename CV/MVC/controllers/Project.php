@@ -2,12 +2,12 @@
 
     class Project extends Controller{
         public function __construct(){
-
+            parent::__construct();
         }
 
         public function index(){
             $this->view("project",[
-                "title"=> "",""=> ""
+                'isLogin'=>$this->isLogin
             ]);
         }
     }

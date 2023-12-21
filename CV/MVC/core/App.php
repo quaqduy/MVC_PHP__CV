@@ -1,12 +1,16 @@
 <?php 
 
     class App{
-
         protected $controller = "Home";
         protected $action = "index";
         protected $params = array();
 
         public function __construct(){
+            //check login
+            if(isset($_SESSION['password']) && $_SESSION['password'] != ''){
+                $this->islogin = true;
+            }
+
             //handle url to array of url item localHost::MVC/CV/a/b/c/d => [..,..,a,b,c,d]
             $arrURL = $this->processURL();
             
@@ -31,6 +35,8 @@
             }
 
             //initialize params for method controller
+            unset($arrURL[0]);
+            unset($arrURL[1]);
             $this->params = $arrURL?array_values($arrURL):[];
 
             //call function in class controller

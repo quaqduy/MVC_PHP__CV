@@ -15,14 +15,6 @@
                 return null;
             }
         }
-
-    }
-
-    class account {
-        public $password = "";
-        public function __construct($password) {
-            $this->password = $password;    
-        }
     }
 
 ?>
