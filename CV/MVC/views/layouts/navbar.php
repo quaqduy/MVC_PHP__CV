@@ -34,5 +34,24 @@
                 </tr>
             </table>
         </div>
+
+        <?php
+
+            if(isset($data['isLogin']) && $data['isLogin']){
+                ?>
+                    <div class="navItem">
+                        <table>
+                            <tr>
+                                <td style='width: 30px;'><i class="fa-solid fa-right-from-bracket"></i></td>
+                                <td>
+                                    <a href="/MVCPHP/CV/Home/logout">Logout</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                <?php
+            }
+
+        ?>
     </div>
 </div>
