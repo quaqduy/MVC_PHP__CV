@@ -63,16 +63,8 @@
                 $stmt = $this->conn->prepare($query);
                 $stmt->bind_param("s", $content);
                 $stmt->execute();
-            
-                // Check if the insertion was successful
-                if ($stmt->affected_rows > 0) {
-                    echo "Insert successful";
-                } else {
-                    echo "Insert failed";
-                }
                 $stmt->close();
             } catch (Exception $e) {
-                echo "Error: " . $e->getMessage();
             }
         }
 
@@ -98,16 +90,9 @@
                 $stmt = $this->conn->prepare($query);
                 $stmt->bind_param('ss' , $content , $id);
                 $stmt->execute();
-            
-                // Check if the insertion was successful
-                if ($stmt->affected_rows > 0) {
-                    echo "Update successful";
-                } else {
-                    echo "Update failed";
-                }
+
                 $stmt->close();
             } catch (Exception $e) {
-                echo "Error: " . $e->getMessage();
             }
         }
 
@@ -132,16 +117,8 @@
                 $stmt = $this->conn->prepare($query);
                 $stmt->bind_param('s' , $id);
                 $stmt->execute();
-            
-                // Check if the insertion was successful
-                if ($stmt->affected_rows > 0) {
-                    echo "Update successful";
-                } else {
-                    echo "Update failed";
-                }
                 $stmt->close();
             } catch (Exception $e) {
-                echo "Error: " . $e->getMessage();
             }
         }
     }
@@ -175,7 +152,4 @@
             $this->content = $content;
         }
     }
-
-
-
 ?>

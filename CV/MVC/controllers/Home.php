@@ -72,6 +72,34 @@
             $cvContentModel->delete($objectClass,$contentObj);
             header('location: /MVCPHP/CV');
         }
+
+
+        function update_profile_image(){
+            $this->uploadImg();
+            header('location: /MVCPHP/CV');
+        }
+
+        function uploadImg(){
+            $uploadDir = "./MVC/public/img/";
+            $originalFileName = $_FILES['avatar']['name'];
+            $fileExtension = strtolower(pathinfo($originalFileName, PATHINFO_EXTENSION));
+            $uploadOk = 1;
+
+            $allowedFormats = array("jpg", "jpeg", "png", "gif");
+            if (!in_array($fileExtension, $allowedFormats)) {
+                $uploadOk = 0;
+            }
+
+            $uploadedFile = $uploadDir . 'avatar.jpg';
+
+            if ($uploadOk) {
+                if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadedFile)) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        }
     }
 
 ?>
