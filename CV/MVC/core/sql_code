@@ -1,5 +1,5 @@
 CREATE TABLE `id21688145_cv`.`account` (`password` VARCHAR(15) NOT NULL ) ENGINE = InnoDB;
-INSERT INTO `account`(`password`) VALUES ('["quaqduy09"]');
+INSERT INTO `account`(`password`) VALUES ('quaqduy09');
 
 
 CREATE TABLE `id21688145_cv`.`educations` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;

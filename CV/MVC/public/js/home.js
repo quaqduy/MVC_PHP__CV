@@ -60,7 +60,7 @@ const home = {
         }else if(contentType == '3'){
             contentType = 'Technical_proficiencie';
         }
-        editContentForm.action = `/mvcphp/CV/Home/update/${contentType}/${contentId}`;
+        editContentForm.action = `/MVCPHP/CV/Home/update/${contentType}/${contentId}`;
 
         if(modifyModelBtn){
             modifyModelBtn.click();
@@ -77,7 +77,7 @@ const home = {
         }else if(contentType == '3'){
             contentType = 'Technical_proficiencie';
         }
-        deleteContentForm.action = `/mvcphp/CV/Home/delete/${contentType}/${contentId}`;
+        deleteContentForm.action = `/MVCPHP/CV/Home/delete/${contentType}/${contentId}`;
         if(modifyModelBtn){
             deleteModelBtn.click();
         }

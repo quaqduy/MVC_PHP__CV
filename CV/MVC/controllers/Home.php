@@ -81,14 +81,12 @@
 
         function uploadImg(){
             $uploadDir = "./MVC/public/img/";
-            print_r($_FILES);
             $originalFileName = $_FILES['avatar']['name'];
             $fileExtension = strtolower(pathinfo($originalFileName, PATHINFO_EXTENSION));
             $uploadOk = 1;
 
             $allowedFormats = array("jpg", "jpeg", "png", "gif");
             if (!in_array($fileExtension, $allowedFormats)) {
-                echo "Only JPG, JPEG, PNG, GIF files are allowed.";
                 $uploadOk = 0;
             }
 
@@ -96,9 +94,9 @@
 
             if ($uploadOk) {
                 if (move_uploaded_file($_FILES['avatar']['tmp_name'], $uploadedFile)) {
-                    echo "File has been uploaded successfully.";
+                    return 1;
                 } else {
-                    echo "Error uploading file.";
+                    return 0;
                 }
             }
         }
