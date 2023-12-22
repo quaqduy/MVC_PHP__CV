@@ -16,13 +16,39 @@
 #leftCV{
     background: #2b3438 !important;
     border-radius: 10px 0 0 10px;
-    color: white;
+    color: white !important;
+}
+
+#avatar_float {
+    width: 100%;
+    position: relative;
+}
+
+#editAvater_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    opacity: 0;
+}
+
+#avatar_float:hover #avatar{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#avatar_float:hover #editAvater_icon{
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 #avatar{
     width: 100%;
     border-radius: 500px;
     padding: 10%;
+    position: relative;
+    z-index: 5;
 }
 
 ul{
@@ -39,6 +65,10 @@ ul>h1{
     font-size: 30px;
 }
 
+.rightCV{
+    width: 100%;
+}
+
 .rightCV_header>h2{
     text-align: left;
     text-transform: uppercase;
@@ -46,6 +76,10 @@ ul>h1{
     font-style: italic;
     font-size: 60px;
     margin-top: 30px;
+}
+
+.rightCV_body{
+    width: 100%;
 }
 
 #major{
@@ -82,15 +116,36 @@ h3{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 50px !important;
+    margin-top: 15px !important;
 }
 
-.itemBox__title>i{
+.itemBox__title i{
     margin-left: 15px;
     opacity: 0.5;
+    color:black !important;
 }
 
-.itemBox__title>i:hover{
+.itemBox__title i:hover{
     cursor: pointer;
     opacity: 0.7;
+}
+
+.itemBox_content{
+    width: 100%;
+}
+
+.itemBox_content>ul{
+    width: 100%;
+    margin-left: -20px;
+    text-align: justify;
+}
+
+.modify_btn,.deleteContent_btn{
+    margin-left: 20px;
+    opacity: 0.3;
+}
+
+.modify_btn,.deleteContent_btn:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
