@@ -7,7 +7,6 @@
             if(isset($_SESSION['password']) && $_SESSION['password'] != ''){
                 $this->isLogin = true;
             }
-            var_dump($this->isLogin);
         }
 
         function view($view,$data=[]){

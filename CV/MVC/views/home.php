@@ -6,7 +6,10 @@
         <div id='leftCV' class="col-4">
             <div class="row">
                 <div class='col-12'>
-                    <img id='avatar' src="/MVCPHP/CV/MVC/public/img/avatar.jpg"alt="AVATAR" >
+                    <div id='avatar_float'>
+                        <img id='avatar' src="/MVCPHP/CV/MVC/public/img/avatar.jpg"alt="AVATAR" >
+                        <i id='editAvater_icon' class="fa-solid fa-user-pen"></i>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -79,7 +82,19 @@
                     <div class='careerObjective'>
                         <div class='itemBox__title'>
                             <h3>Career Objective</h3>
-                            <a href="/mvcphp/CV/home/create/Career_objective"><i class="fa-solid fa-plus addContent_btn"></i></a>
+                            <?php 
+                                if(isset($data['isLogin']) && !$data['isLogin']){
+                                    ?>
+                                    <i class="fa-solid fa-plus addContent_btn"></i>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <a href="/mvcphp/CV/home/create/Career_objective">
+                                        <i class="fa-solid fa-plus addContent_btn"></i>
+                                    </a>
+                                    <?php
+                                }
+                            ?>
                         </div>
                         <div class='careerObjective_content itemBox_content'>
                             <ul>
@@ -94,7 +109,11 @@
                                                     home.content_handler(event.target,'modify');
                                                 
                                                 "></i>
-                                                <i class="fa-solid fa-trash deleteContent_btn"></i>
+                                                <i class="fa-solid fa-trash deleteContent_btn" onclick="
+                                        
+                                                    home.content_handler(event.target,'delete');
+
+                                                "></i>
                                             </li>
                                         <?php
                                     }
@@ -108,7 +127,17 @@
                     <div class='education'>
                         <div class='itemBox__title'>
                             <h3>education</h3>
-                            <a href="/mvcphp/CV/home/create/Education"><i class="fa-solid fa-plus addContent_btn"></i></a>
+                            <?php 
+                                if(isset($data['isLogin']) && !$data['isLogin']){
+                                    ?>
+                                    <i class="fa-solid fa-plus addContent_btn"></i>
+                                    <?php
+                                }else{
+                                    ?>
+                                     <a href="/mvcphp/CV/home/create/Education"><i class="fa-solid fa-plus addContent_btn"></i></a>
+                                    <?php
+                                }
+                            ?>
                         </div>
                         <div class='education_content itemBox_content'>
                             <ul>
@@ -117,13 +146,17 @@
                             foreach ($data['contents']['educations_arr'] as $education_content) {
                                 ?>
                                     <li>
-                                        <span content_type='2' content_index='<?= $careerObjective_content->id ?> style ='font-style: italic'><?= $education_content->content ?></span>
+                                        <span content_type='2' content_index='<?= $education_content->id ?>' style ='font-style: italic'><?= $education_content->content ?></span>
                                         <i class="fa-solid fa-pen-to-square modify_btn" onclick="
                                         
                                             home.content_handler(event.target,'modify');
                                         
                                         "></i>
-                                        <i class="fa-solid fa-trash deleteContent_btn"></i>
+                                        <i class="fa-solid fa-trash deleteContent_btn" onclick="
+                                        
+                                            home.content_handler(event.target,'delete');
+
+                                        "></i>
                                     </li>
                                 <?php
                             }
@@ -137,7 +170,17 @@
                     <div class='tech-proficiencies'>
                         <div class='itemBox__title'>
                             <h3>technical proficiencies</h3>
-                            <a href="/mvcphp/CV/home/create/Technical_proficiencie"><i class="fa-solid fa-plus addContent_btn"></i></a>
+                            <?php 
+                                if(isset($data['isLogin']) && !$data['isLogin']){
+                                    ?>
+                                    <i class="fa-solid fa-plus addContent_btn"></i>                                     
+                                    <?php
+                                }else{
+                                    ?>
+                                    <a href="/mvcphp/CV/home/create/Technical_proficiencie"><i class="fa-solid fa-plus addContent_btn"></i></a>
+                                    <?php
+                                }
+                            ?>                            
                         </div>
                         <div class='tech-proficiencies_content itemBox_content'>
                             <ul>
@@ -146,13 +189,17 @@
                             foreach ($data['contents']['technical_proficiencies_arr'] as $tech_proficiencies_content) {
                                 ?>
                                     <li>
-                                        <span content_type='3' content_index='<?= $careerObjective_content->id ?> style ='font-style: italic'><?= $tech_proficiencies_content->content ?></span>
+                                        <span content_type='3' content_index='<?= $tech_proficiencies_content->id ?>' style ='font-style: italic'><?= $tech_proficiencies_content->content ?></span>
                                         <i class="fa-solid fa-pen-to-square modify_btn" onclick="
                                         
                                             home.content_handler(event.target,'modify');
                                         
                                         "></i>
-                                        <i class="fa-solid fa-trash deleteContent_btn"></i>
+                                        <i class="fa-solid fa-trash deleteContent_btn" onclick="
+                                        
+                                            home.content_handler(event.target,'delete');
+
+                                        "></i>
                                     </li>
                                 <?php
                             }
@@ -177,6 +224,8 @@
 
     ?>
     <button id='modifyModelBtn' type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modelModifyContent"></button>
+    <button id='deleteModelBtn' type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modelDeleteContent"></button>
+    <button id='imgModelBtn' type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modelImgContent"></button>
 
     <!-- login Modal -->
     <form action="/mvcphp/CV/home/login" method="POST">
@@ -227,6 +276,55 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-outline-dark">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- confirm delete Modal -->
+    <form id='deleteContentForm' action="" method="POST">
+        <div class="modal fade" id="modelDeleteContent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirm delete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating">
+                            Do you want to delete this content ??
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-outline-dark">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Img Upload Modal -->
+    <form id='modelImg' action="" method="POST">
+        <div class="modal fade" id="modelImgContent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Upload new profile picture here !!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-floating">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Default file input example</label>
+                                <input name='avatar' class="form-control" type="file" id="formFile" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-dark">Upload</button>
                     </div>
                 </div>
             </div>

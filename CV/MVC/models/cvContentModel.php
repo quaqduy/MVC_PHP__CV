@@ -76,6 +76,74 @@
             }
         }
 
+        function update($objectClass,$Content_objective){
+            try {
+                $table = '';
+                if($objectClass == 'Career_objective'){
+                    $table = 'career_objectives';
+                }else if($objectClass == 'Education'){
+                    $table = 'educations';
+                }else if($objectClass == 'Technical_proficiencie'){
+                    $table = 'technical_proficiencies';
+                }
+
+                // Using prepared statements to prevent SQL injection
+                $query = "UPDATE $table SET content = ? WHERE id = ?";
+            
+                // SET values
+                $content = $Content_objective->content;
+                $id = $Content_objective->id;
+            
+                // Prepare and execute the statement
+                $stmt = $this->conn->prepare($query);
+                $stmt->bind_param('ss' , $content , $id);
+                $stmt->execute();
+            
+                // Check if the insertion was successful
+                if ($stmt->affected_rows > 0) {
+                    echo "Update successful";
+                } else {
+                    echo "Update failed";
+                }
+                $stmt->close();
+            } catch (Exception $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }
+
+        function delete($objectClass,$Content_objective){
+            try {
+                $table = '';
+                if($objectClass == 'Career_objective'){
+                    $table = 'career_objectives';
+                }else if($objectClass == 'Education'){
+                    $table = 'educations';
+                }else if($objectClass == 'Technical_proficiencie'){
+                    $table = 'technical_proficiencies';
+                }
+
+                // Using prepared statements to prevent SQL injection
+                $query = "DELETE FROM $table WHERE id = ?";
+
+                // SET values
+                $id = $Content_objective->id;
+            
+                // Prepare and execute the statement
+                $stmt = $this->conn->prepare($query);
+                $stmt->bind_param('s' , $id);
+                $stmt->execute();
+            
+                // Check if the insertion was successful
+                if ($stmt->affected_rows > 0) {
+                    echo "Update successful";
+                } else {
+                    echo "Update failed";
+                }
+                $stmt->close();
+            } catch (Exception $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }
     }
 
     class Career_objective {
