@@ -1,10 +1,10 @@
-CREATE TABLE `cv`.`account` (`password` VARCHAR(15) NOT NULL ) ENGINE = InnoDB;
+CREATE TABLE `id21688145_cv`.`account` (`password` VARCHAR(15) NOT NULL ) ENGINE = InnoDB;
 INSERT INTO `account`(`password`) VALUES ('["quaqduy09"]');
 
 
-CREATE TABLE `cv`.`educations` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
-CREATE TABLE `cv`.`career_objectives` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
-CREATE TABLE `cv`.`technical_proficiencies` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
+CREATE TABLE `id21688145_cv`.`educations` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
+CREATE TABLE `id21688145_cv`.`career_objectives` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
+CREATE TABLE `id21688145_cv`.`technical_proficiencies` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
 
 INSERT INTO `educations`(`content`) VALUES ('content');
 INSERT INTO `career_objectives`(`content`) VALUES ('content');

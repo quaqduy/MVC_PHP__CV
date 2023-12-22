@@ -228,7 +228,7 @@
     <button id='imgModelBtn' type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#modelImgContent"></button>
 
     <!-- login Modal -->
-    <form action="/mvcphp/CV/home/login" method="POST">
+    <form action="/mvcphp/CV/Home/login" method="POST">
         <div class="modal fade" id="modelCheckPass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -306,7 +306,7 @@
     </form>
 
     <!-- Img Upload Modal -->
-    <form id='modelImg' action="" method="POST">
+    <form id='modelImg' action="/mvcphp/CV/Home/update_profile_image" method="POST" enctype="multipart/form-data">
         <div class="modal fade" id="modelImgContent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -317,7 +317,6 @@
                     <div class="modal-body">
                         <div class="form-floating">
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Default file input example</label>
                                 <input name='avatar' class="form-control" type="file" id="formFile" accept="image/*">
                             </div>
                         </div>

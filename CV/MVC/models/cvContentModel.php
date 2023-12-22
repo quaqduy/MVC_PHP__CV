@@ -175,7 +175,4 @@
             $this->content = $content;
         }
     }
-
-
-
 ?>
