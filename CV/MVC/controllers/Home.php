@@ -10,8 +10,6 @@
             $cvContentModel = $this->model('cvContentModel');
             $contents = $cvContentModel->getContents();
 
-            print_r($contents);
-
             $this->view('home',[
                 'isLogin'=>$this->isLogin,
                 'contents'=>$contents
@@ -53,6 +51,25 @@
             $contentObj = new $objectClass(0,'New content here');
 
             $cvContentModel->create($objectClass,$contentObj);
+            header('location: /MVCPHP/CV');
+        }
+
+        function update($objectClass,$id){
+            //use model to modify DB
+            $newContent = $_POST['newContent'];
+            $cvContentModel = $this->model('cvContentModel');
+            $contentObj = new $objectClass($id,$newContent);
+
+            $cvContentModel->update($objectClass,$contentObj);
+            header('location: /MVCPHP/CV');
+        }
+
+        function delete($objectClass,$id){
+            //use model to modify DB
+            $cvContentModel = $this->model('cvContentModel');
+            $contentObj = new $objectClass($id,  '');
+
+            $cvContentModel->delete($objectClass,$contentObj);
             header('location: /MVCPHP/CV');
         }
     }
