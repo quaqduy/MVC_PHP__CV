@@ -78,7 +78,7 @@ const home = {
             contentType = 'Technical_proficiencie';
         }
         deleteContentForm.action = `/MVCPHP/CV/Home/delete/${contentType}/${contentId}`;
-        if(modifyModelBtn){
+        if(deleteModelBtn){
             deleteModelBtn.click();
         }
     },

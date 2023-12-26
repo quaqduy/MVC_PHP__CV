@@ -99,7 +99,7 @@
                         <div class='careerObjective_content itemBox_content'>
                             <ul>
                                 <?php 
-
+                                if(isset($data['contents']['career_objectives_arr'])){
                                     foreach ($data['contents']['career_objectives_arr'] as $careerObjective_content) {
                                         ?>
                                             <li>
@@ -117,7 +117,7 @@
                                             </li>
                                         <?php
                                     }
-
+                                }
                                 ?>
                             </ul>
                         </div>
@@ -142,25 +142,25 @@
                         <div class='education_content itemBox_content'>
                             <ul>
                             <?php 
-
-                            foreach ($data['contents']['educations_arr'] as $education_content) {
-                                ?>
-                                    <li>
-                                        <span content_type='2' content_index='<?= $education_content->id ?>' style ='font-style: italic'><?= $education_content->content ?></span>
-                                        <i class="fa-solid fa-pen-to-square modify_btn" onclick="
-                                        
-                                            home.content_handler(event.target,'modify');
-                                        
-                                        "></i>
-                                        <i class="fa-solid fa-trash deleteContent_btn" onclick="
-                                        
-                                            home.content_handler(event.target,'delete');
-
-                                        "></i>
-                                    </li>
-                                <?php
+                            if(isset($data['contents']['educations_arr'])){
+                                foreach ($data['contents']['educations_arr'] as $education_content) {
+                                    ?>
+                                        <li>
+                                            <span content_type='2' content_index='<?= $education_content->id ?>' style ='font-style: italic'><?= $education_content->content ?></span>
+                                            <i class="fa-solid fa-pen-to-square modify_btn" onclick="
+                                            
+                                                home.content_handler(event.target,'modify');
+                                            
+                                            "></i>
+                                            <i class="fa-solid fa-trash deleteContent_btn" onclick="
+                                            
+                                                home.content_handler(event.target,'delete');
+    
+                                            "></i>
+                                        </li>
+                                    <?php
+                                }
                             }
-
                             ?>
                             </ul>
                         </div>
@@ -185,25 +185,25 @@
                         <div class='tech-proficiencies_content itemBox_content'>
                             <ul>
                             <?php 
-
-                            foreach ($data['contents']['technical_proficiencies_arr'] as $tech_proficiencies_content) {
-                                ?>
-                                    <li>
-                                        <span content_type='3' content_index='<?= $tech_proficiencies_content->id ?>' style ='font-style: italic'><?= $tech_proficiencies_content->content ?></span>
-                                        <i class="fa-solid fa-pen-to-square modify_btn" onclick="
-                                        
-                                            home.content_handler(event.target,'modify');
-                                        
-                                        "></i>
-                                        <i class="fa-solid fa-trash deleteContent_btn" onclick="
-                                        
-                                            home.content_handler(event.target,'delete');
-
-                                        "></i>
-                                    </li>
-                                <?php
+                            if(isset($data['contents']['technical_proficiencies_arr'])){
+                                foreach ($data['contents']['technical_proficiencies_arr'] as $tech_proficiencies_content) {
+                                    ?>
+                                        <li>
+                                            <span content_type='3' content_index='<?= $tech_proficiencies_content->id ?>' style ='font-style: italic'><?= $tech_proficiencies_content->content ?></span>
+                                            <i class="fa-solid fa-pen-to-square modify_btn" onclick="
+                                            
+                                                home.content_handler(event.target,'modify');
+                                            
+                                            "></i>
+                                            <i class="fa-solid fa-trash deleteContent_btn" onclick="
+                                            
+                                                home.content_handler(event.target,'delete');
+    
+                                            "></i>
+                                        </li>
+                                    <?php
+                                }
                             }
-
                             ?>
                             </ul>
                         </div>

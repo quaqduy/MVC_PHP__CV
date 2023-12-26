@@ -9,7 +9,7 @@
             //use model to modify DB
             $cvContentModel = $this->model('cvContentModel');
             $contents = $cvContentModel->getContents();
-
+            // print_r($contents);
             $this->view('home',[
                 'isLogin'=>$this->isLogin,
                 'contents'=>$contents
@@ -61,7 +61,7 @@
             $contentObj = new $objectClass($id,$newContent);
 
             $cvContentModel->update($objectClass,$contentObj);
-            header('location: /MVCPHP/CV');
+            // header('location: /MVCPHP/CV');
         }
 
         function delete($objectClass,$id){
