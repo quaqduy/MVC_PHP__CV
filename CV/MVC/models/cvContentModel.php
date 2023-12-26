@@ -29,7 +29,7 @@
             //data from technical_proficiencies
             $query3 = "SELECT * FROM technical_proficiencies";
             $result3 = mysqli_query($this->conn,$query3);
-            if (mysqli_num_rows($result2) > 0) {
+            if (mysqli_num_rows($result3) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result3)) {
                     $technical_proficiencies_arr[] = new Technical_proficiencie($row['id'],$row['content']);
