@@ -61,7 +61,7 @@
             $contentObj = new $objectClass($id,$newContent);
 
             $cvContentModel->update($objectClass,$contentObj);
-            // header('location: /MVCPHP/CV');
+            header('location: /MVCPHP/CV');
         }
 
         function delete($objectClass,$id){
