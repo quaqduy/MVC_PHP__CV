@@ -6,6 +6,13 @@
     margin: 25px 0 0 0;
 }
 
+.page_header a{
+    background: transparent !important;
+    text-decoration: none !important;
+    color: black !important;
+    font-style: italic !important;
+}
+
 .itemProject_box{
     width: 300px;
     background: white !important;

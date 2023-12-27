@@ -5,7 +5,10 @@ INSERT INTO `account`(`password`) VALUES ('quaqduy09');
 CREATE TABLE `id21688145_cv`.`educations` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
 CREATE TABLE `id21688145_cv`.`career_objectives` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
 CREATE TABLE `id21688145_cv`.`technical_proficiencies` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
+CREATE TABLE `id21688145_cv`.`technical_proficiencies` (`id` INT NOT NULL AUTO_INCREMENT , `content` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
+CREATE TABLE `id21688145_cv`.`projects` (`id` INT NOT NULL AUTO_INCREMENT , `title` TEXT NULL DEFAULT NULL  ,  `des` TEXT NULL DEFAULT NULL  , `linkProduct` TEXT NULL DEFAULT NULL  , `linkCode` TEXT NULL DEFAULT NULL  ,  PRIMARY KEY (`id`) ) ENGINE = InnoDB;
 
 INSERT INTO `educations`(`content`) VALUES ('content');
 INSERT INTO `career_objectives`(`content`) VALUES ('content');
 INSERT INTO `technical_proficiencies`(`content`) VALUES ('content');
+INSERT INTO `projects`(`title`, `des`, `linkProduct`, `linkCode`) VALUES ('content', 'content', 'content', 'content');
