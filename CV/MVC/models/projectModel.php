@@ -58,7 +58,7 @@
                 // Using prepared statements to prevent SQL injection
                 $query = "
                     UPDATE projects
-                    SET pathImg = ?, title = ?, des = ?, linkProduct = ?, linkCode = ?
+                    SET title = ?, des = ?, linkProduct = ?, linkCode = ?
                     WHERE id = ?;
                 ";
             
@@ -72,7 +72,7 @@
             
                 // Prepare and execute the statement
                 $stmt = $this->conn->prepare($query);
-                $stmt->bind_param('ssssss' , $pathImg , $title , $des , $linkProduct , $linkCode , $id);
+                $stmt->bind_param('sssss' , $title , $des , $linkProduct , $linkCode , $id);
                 $stmt->execute();
 
                 $stmt->close();
